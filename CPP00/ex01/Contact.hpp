@@ -1,11 +1,9 @@
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+#pragma once
 
-# include <iostream>
-# include <string>
-# include "Date.hpp"
-
+#include <iostream>
+#include <string>
+#include "Date.hpp"
 
 class Contact
 {
@@ -57,5 +55,3 @@ class Contact
         std::string    get_underwear_color(void) const;
         std::string    get_darkest_secret(void) const;
 };
-
-#endif

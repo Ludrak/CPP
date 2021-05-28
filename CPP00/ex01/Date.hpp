@@ -1,9 +1,8 @@
 
-#ifndef DATE_HPP
-# define DATE_HPP
+#pragma once
 
-# include <string>
-# include "Util.hpp"
+#include <string>
+#include "Util.hpp"
 
 class Date
 {
@@ -29,5 +28,3 @@ class Date
         std::string to_str(void);
         static Date from_str(std::string &str);
 };
-
-#endif

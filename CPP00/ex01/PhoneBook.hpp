@@ -1,14 +1,13 @@
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#pragma once
 
-# include "Contact.hpp"
+#include "Contact.hpp"
 
-# define PROMPT       "phonebook @"
-# define MAX_CONTACTS 8
+#define PROMPT       "phonebook @"
+#define MAX_CONTACTS 8
 
-# define ERR_CONTACT_NOT_FOUND   1
-# define ERR_NO_SPACE_LEFT       2
+#define ERR_CONTACT_NOT_FOUND   1
+#define ERR_NO_SPACE_LEFT       2
 
 class   PhoneBook
 {
@@ -23,5 +22,3 @@ class   PhoneBook
         Contact *get_contacts(void) const;
         uint8_t get_nb_contact(void) const;
 };
-
-#endif
