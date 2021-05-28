@@ -6,7 +6,7 @@ PhoneBook::PhoneBook(void)
     this->nb_contacts = 0;
 }
 
-uint8_t PhoneBook::add_contact(const Contact contact)
+uint8_t PhoneBook::add_contact(const Contact &contact)
 {
     if (this->nb_contacts < MAX_CONTACTS)
     {

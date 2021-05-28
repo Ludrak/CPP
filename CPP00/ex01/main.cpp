@@ -49,7 +49,7 @@ void        add_command(PhoneBook &phone_book)
     contact.set_login(buffer);
     std::cout << "phone number:" ; std::getline(std::cin, buffer);
     if (!buffer.empty() && ((buffer[0] != '+' || !is_number(buffer.substr(1))) && !is_number(buffer)))
-        { std::cout << "Invalid phone number (use +<country_code><phone_number> or <phone_number>)" << std::endl; }
+        { std::cout << "Invalid phone number (format is +<country_code><phone_number> or <phone_number>)" << std::endl; return ;}
     contact.set_phone_number(buffer);
     std::cout << "postal address:" ; std::getline(std::cin, buffer);
     contact.set_postal_address(buffer);

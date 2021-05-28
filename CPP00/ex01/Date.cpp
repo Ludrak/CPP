@@ -4,17 +4,11 @@
 //##
 //##    Constructors
 
-Date::Date(void)
-{
-    Date(0, 0, 0);
-}
+Date::Date(void) { Date(0, 0, 0); }
 
-Date::Date(uint8_t day, uint8_t month, uint16_t year)
-{
-    this->day = day;
-    this->month = month;
-    this->year = year;
-}
+Date::Date(uint8_t day, uint8_t month, uint16_t year) : 
+    day(day), month(month), year(year)
+    { }
 
 Date::Date(std::string &str)
 {

@@ -6,8 +6,7 @@
 #define PROMPT       "phonebook @"
 #define MAX_CONTACTS 8
 
-#define ERR_CONTACT_NOT_FOUND   1
-#define ERR_NO_SPACE_LEFT       2
+#define ERR_NO_SPACE_LEFT   1
 
 class   PhoneBook
 {
@@ -18,7 +17,7 @@ class   PhoneBook
     public:
         PhoneBook(void);
 
-        uint8_t add_contact(const Contact new_contact);
+        uint8_t add_contact(const Contact &new_contact);
         Contact *get_contacts(void) const;
         uint8_t get_nb_contact(void) const;
 };
