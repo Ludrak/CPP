@@ -2,9 +2,9 @@
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
-#include <iostream>
-#include <string>
-#include "Date.hpp"
+# include <iostream>
+# include <string>
+# include "Date.hpp"
 
 
 class Contact

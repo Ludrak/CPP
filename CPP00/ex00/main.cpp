@@ -1,5 +1,6 @@
 
 #include <iostream>
+#include <cctypes>
 
 static char	*toUpper(char *const str)
 {
@@ -28,7 +29,7 @@ int			main(int ac, char **av)
 	}
 	i = 1;
 	while (i < ac)
-		std::cout << toUpper(av[i++]);
+		std::cout << std::string::toupper(static_cast<std::string>(av[i++]));
 	std::cout << std::endl;
 	return (0);
 }

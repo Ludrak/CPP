@@ -38,18 +38,25 @@ Date        Date::from_str(std::string &date_str)
     std::string format[3] = {};
     size_t      i = 0;
 
+    if (date_str.empty())
+        return (Date());
     std::string::iterator begin = date_str.begin();
     for (std::string::iterator it = date_str.begin() ; it != date_str.end() ; it++)
     {
         if (*it == '/')
         {
-            format[i++].assign(begin, it);
+            format[i].assign(begin, it);
+            if (!is_number(format[i++]))
+                return (Date());
             begin = it + 1;
         }
     }
-    format[i++].assign(begin, date_str.end());
+    if (i != 2)
+        return (Date());
+    format[i].assign(begin, date_str.end());
     return (Date(std::stoi(format[0]), std::stoi(format[1]), std::stoi(format[2])));
 }
+
 
 //##
 //##    Getters & Setters
@@ -82,4 +89,14 @@ void        Date::set_month(const uint8_t &month)
 void        Date::set_year(const uint8_t &year)
 {
     this->year = year;
+}
+
+//##
+//##    Utils
+
+uint8_t     Date::is_empty(void)
+{
+    if (this->day == 0 && this->month == 0 && this->year == 0)
+        return (1);
+    return (0);
 }

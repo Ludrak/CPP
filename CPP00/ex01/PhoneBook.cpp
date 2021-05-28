@@ -11,7 +11,7 @@ uint8_t PhoneBook::add_contact(const Contact contact)
     if (this->nb_contacts < MAX_CONTACTS)
     {
         this->contacts[this->nb_contacts++] = contact;
-        std::cout << "added new contact " << contact.get_first_name() << " to phonebook" << std::endl;
+        std::cout << "added new contact " << contact.get_first_name() << " to phonebook" << std::endl << std::endl;
         return (EXIT_SUCCESS);
     }
     return (ERR_NO_SPACE_LEFT);

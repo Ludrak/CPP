@@ -4,7 +4,8 @@ SRC_DIR=.
 SRCS=main.cpp \
 		Date.cpp \
 		Contact.cpp \
-		PhoneBook.cpp
+		PhoneBook.cpp \
+		Util.cpp
 
 BIN=bin
 SRC_FILES=$(addprefix $(SRC_DIR),$(SRCS))

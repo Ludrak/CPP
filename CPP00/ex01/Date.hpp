@@ -2,7 +2,8 @@
 #ifndef DATE_HPP
 # define DATE_HPP
 
-#include <string>
+# include <string>
+# include "Util.hpp"
 
 class Date
 {
@@ -22,6 +23,8 @@ class Date
         void        set_day(const uint8_t &day);
         void        set_month(const uint8_t &month);
         void        set_year(const uint8_t &year);
+
+        uint8_t     is_empty(void);
 
         std::string to_str(void);
         static Date from_str(std::string &str);
