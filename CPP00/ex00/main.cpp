@@ -1,22 +1,6 @@
 
 #include <iostream>
-#include <cctypes>
-
-static char	*toUpper(char *const str)
-{
-	size_t	i;
-
-	i = 0;
-	if (!str)
-		return (NULL);
-	while (str && str[i])
-	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-			str[i] -= 32;
-		i++;
-	}
-	return (str);
-}
+#include <string>
 
 int			main(int ac, char **av)
 {
@@ -29,7 +13,15 @@ int			main(int ac, char **av)
 	}
 	i = 1;
 	while (i < ac)
-		std::cout << std::string::toupper(static_cast<std::string>(av[i++]));
+	{
+		std::string str = std::string(av[i++]);
+		for(std::string::iterator it = str.begin(); it != str.end(); it++)
+		{
+			if (*it >= 'a' && *it <= 'z')
+				*it -= 32;
+		}
+		std::cout << str;
+	}
 	std::cout << std::endl;
 	return (0);
 }
