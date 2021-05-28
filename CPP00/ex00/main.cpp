@@ -14,7 +14,7 @@ int			main(int ac, char **av)
 	i = 1;
 	while (i < ac)
 	{
-		std::string str = std::string(av[i++]);
+		std::string str(av[i++]);
 		for(std::string::iterator it = str.begin(); it != str.end(); it++)
 		{
 			if (*it >= 'a' && *it <= 'z')
