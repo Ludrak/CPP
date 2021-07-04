@@ -1,10 +1,7 @@
-NAME=phonebook
+NAME=project
 
 SRC_DIR=.
-SRCS=main.cpp \
-		Contact.cpp \
-		PhoneBook.cpp \
-		Util.cpp
+SRCS=main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
 
 BIN=bin
 SRC_FILES=$(addprefix $(SRC_DIR),$(SRCS))

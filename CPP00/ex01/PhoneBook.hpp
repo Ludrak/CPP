@@ -6,8 +6,6 @@
 #define PROMPT       "phonebook @"
 #define MAX_CONTACTS 8
 
-#define ERR_NO_SPACE_LEFT   1
-
 class   PhoneBook
 {
     private:

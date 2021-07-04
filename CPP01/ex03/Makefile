@@ -1,10 +1,7 @@
-NAME=phonebook
+NAME=project.out
 
 SRC_DIR=.
-SRCS=main.cpp \
-		Contact.cpp \
-		PhoneBook.cpp \
-		Util.cpp
+SRCS=main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
 BIN=bin
 SRC_FILES=$(addprefix $(SRC_DIR),$(SRCS))

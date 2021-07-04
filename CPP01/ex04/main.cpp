@@ -1,24 +1,26 @@
 
 #include <iostream>
+#include <string>
 #include <fstream>
 #include <sstream>
 
 void    pattern_replace(std::string &str, const std::string &pattern, const std::string &replace)
 {
-    size_t start = 0;
+    size_t pos = 0;
 
     if (pattern.empty())
         return ;
     do
     {
-        start = str.find(pattern, start);
-        if (start != str.npos)
+        pos = str.find(pattern, pos);
+        if (pos != str.npos)
         {
-            str.replace(start, pattern.length(), replace);
-            start+=pattern.length();
+            str.erase(pos, pattern.length());
+            str.insert(pos, replace);
+            pos += replace.length();
         }
     }
-    while (start != str.npos);
+    while (pos != str.npos);
 }
 
 int main(int ac, char **av)
@@ -51,6 +53,9 @@ int main(int ac, char **av)
         std::cout << "File replaced successfull. (output in " << file_name + ".replace" << ")" << std::endl;
     }
     else
+    {
         std::cerr << "Cannot open file: " << (stream.is_open() ? file_name + ".replace" : file_name)  << std::endl;
+        return (EXIT_FAILURE);
+    }
     return (EXIT_SUCCESS);
 }

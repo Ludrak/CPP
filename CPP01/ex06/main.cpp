@@ -1,22 +1,27 @@
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+#include "Karen.hpp"
 
-int main()
+void    complainUntilLevel(Karen &karen, Level l)
 {
+    Level i = 0;
+
+    if (l >= 0 && l < 4)
     {
-        Weapon club = Weapon("crude spiked club");
-        HumanA bob("Bob", club);
-        bob.attack();
-        club.setType("some other type of club");
-        bob.attack();
+        while (i <= l)
+            karen.complain(LEVELS[i++]);
     }
+}
+
+int main(int ac, char **av)
+{
+    Karen   k;
+    Level   log_level;
+
+    if (ac == 2 && (log_level = levelFromStr(av[1])) == NULL_LEVEL)
     {
-        Weapon club = Weapon("crude spiked club");
-        HumanB jim("Jim");
-        jim.setWeapon(&club);
-        jim.attack();
-        club.setType("some other type of club");
-        jim.attack();
+        std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+        return (0);
     }
+    complainUntilLevel(k, log_level);
+    return (0);
 }

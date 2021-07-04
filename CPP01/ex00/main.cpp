@@ -1,10 +1,15 @@
 
-#include <iostream>
-#include "Pony.hpp"
+#include "Zombie.hpp"
 
 int main()
 {
-    Pony::ponyOnTheHeap();
-    Pony::ponyOnTheStack();
+    randomChump("Michael");
+    randomChump("Dan");
+    randomChump("Ethan");
+    randomChump("Jacob");
+
+    Zombie *z = newZombie("Zag");
+    z->announce();
+    delete z;
     return (0);
 }

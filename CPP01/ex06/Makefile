@@ -1,10 +1,7 @@
-NAME=phonebook
+NAME=karen-filter
 
 SRC_DIR=.
-SRCS=main.cpp \
-		Contact.cpp \
-		PhoneBook.cpp \
-		Util.cpp
+SRCS=main.cpp Karen.cpp
 
 BIN=bin
 SRC_FILES=$(addprefix $(SRC_DIR),$(SRCS))

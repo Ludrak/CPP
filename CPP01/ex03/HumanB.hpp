@@ -18,6 +18,6 @@ class   HumanB
 
         void        attack(void) const;
 
-        void        setWeapon(Weapon *weapon);
+        void        setWeapon(Weapon *const weapon);
         Weapon      &getWeapon(void) const;
 };

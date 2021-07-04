@@ -1,26 +1,14 @@
 
-#include "ZombieEvent.hpp"
+#include <string>
+#include <iostream>
 
 int main()
 {
-    ZombieEvent event;
+    std::string string = "HI THIS IS BRAIN";
+    std::string *stringPTR = &string;
+    std::string &stringREF = string;
 
-    event.setZombieType("Crawler");
-    event.randomChump();
-    event.randomChump();
-    event.randomChump();
-    event.randomChump();
-
-    event.setZombieType("Deducer");
-    event.randomChump();
-    event.randomChump();
-    event.randomChump();
-    event.randomChump();
-
-    event.setZombieType("Revoker");
-    event.randomChump();
-    event.randomChump();
-    event.randomChump();
-    event.randomChump();
-    return (0);
+    std::cout << "str: " << string << std::endl;
+    std::cout << "ptr: " << *stringPTR << std::endl;
+    std::cout << "ref: " << stringREF << std::endl;
 }

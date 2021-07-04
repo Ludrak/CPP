@@ -15,7 +15,7 @@ Weapon      &HumanB::getWeapon(void) const
     return (const_cast<Weapon &>(*this->weapon));
 }
 
-void        HumanB::setWeapon(Weapon *weapon)
+void        HumanB::setWeapon(Weapon *const weapon)
 {
     this->weapon = weapon;
 }

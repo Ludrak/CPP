@@ -13,7 +13,6 @@ class   HumanA
         std::string name;
         Weapon      &weapon;
     public:
-        HumanA(void);
         HumanA(const std::string &name, Weapon &weapon);
 
         void        attack(void) const;
