@@ -56,19 +56,34 @@ void        add_command(PhoneBook &phone_book)
     phone_book.add_contact(contact);
 }
 
+size_t    format_field(std::string &field, const unsigned int maxlen)
+{
+    size_t  byte_size = 0;
+    size_t  printable_chars = 0;
+
+    while(byte_size < field.length() && printable_chars < maxlen)
+    {
+        if (field[byte_size] < 0) {
+            byte_size++;
+        }
+        byte_size++;
+        printable_chars++;
+    }
+    if (printable_chars >= maxlen && byte_size < field.length())
+    {
+        byte_size -= (field[byte_size - 1] < 0);
+        field.resize(byte_size);
+        field[byte_size - 1] = '.';
+        return (byte_size);
+    }
+    field.resize(byte_size);
+    return (maxlen - printable_chars + byte_size);
+}
+
 void print_field(std::string field)
 {
-    if (field.length() > 9)
-    {
-        field.resize(9);
-        std::cout.width(9);
-        std::cout << std::right << field << ".|";
-    }
-    else
-    {
-        std::cout.width(10);
-        std::cout << std::right << field << "|";
-    }
+    std::cout.width(format_field(field, 10));
+    std::cout << std::right << field << "|";
 }
 
 void        search_command(const PhoneBook &phone_book)

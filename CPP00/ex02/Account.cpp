@@ -10,6 +10,7 @@
 
 #include "Account.hpp"
 #include <iostream>
+#include <iomanip>
 #include <ctime>
 
 int Account::_nbAccounts = 0;
@@ -149,12 +150,13 @@ void	Account::_displayTimestamp( void )
 
     std::cout << 
     "[" <<
-    time->tm_year + 1900 <<
-    time->tm_mon <<
-    time->tm_mday <<
+    std::setfill('0') <<
+    std::setw(4) << time->tm_year + 1900 <<
+    std::setw(2) << time->tm_mon <<
+    std::setw(2) << time->tm_mday <<
     '_' <<
-    time->tm_hour <<
-    time->tm_min <<
-    time->tm_sec <<
+    std::setw(2) << time->tm_hour <<
+    std::setw(2) << time->tm_min <<
+    std::setw(2) << time->tm_sec <<
     "]";
 }
