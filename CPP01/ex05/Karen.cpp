@@ -22,7 +22,7 @@ void    Karen::complain( std::string level )
     (this->*_log_functions[l])();
 }
 
-
+/** logs **/
 
 void    Karen::debug( void )
 {

@@ -7,9 +7,9 @@ Weapon::Weapon(const std::string &type)
     { }
 
 
-std::string &Weapon::getType(void) const
-    { return (const_cast<std::string &>(this->type)); }
+const std::string   &Weapon::getType(void) const
+    { return (const_cast<const std::string &>(this->type)); }
 
 
-void        Weapon::setType(const std::string &type)
+void                Weapon::setType(const std::string &type)
     { this->type = type; }

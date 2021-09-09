@@ -1,4 +1,4 @@
-NAME=project
+NAME=zombieHorde
 
 SRC_DIR=.
 SRCS=main.cpp Zombie.cpp ZombieHorde.cpp

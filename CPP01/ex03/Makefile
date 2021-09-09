@@ -1,4 +1,4 @@
-NAME=project.out
+NAME=humans
 
 SRC_DIR=.
 SRCS=main.cpp Weapon.cpp HumanA.cpp HumanB.cpp

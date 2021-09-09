@@ -7,8 +7,8 @@ int main()
 
     k.complain("DEBUG");
     k.complain("INFO");
-    k.complain("ERROR");
     k.complain("WARNING");
+    k.complain("ERROR");
     k.complain("ZZZZ");
     return (0);
 }

@@ -1,4 +1,4 @@
-NAME=project.out
+NAME=brain
 
 SRC_DIR=.
 SRCS=main.cpp

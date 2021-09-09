@@ -1,4 +1,4 @@
-NAME=karen-filter
+NAME=karenFilter
 
 SRC_DIR=.
 SRCS=main.cpp Karen.cpp

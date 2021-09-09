@@ -3,7 +3,7 @@
 
 HumanB::HumanB(const std::string &name) : name(name), weapon(NULL) { }
 
-void    HumanB::attack(void) const
+void        HumanB::attack(void) const
 {
     if (!weapon)
         return;
