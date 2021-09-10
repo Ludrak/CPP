@@ -8,10 +8,10 @@ Level   levelFromStr(const std::string &str)
 
 Karen::Karen( void )
 {
-    this->_log_functions[0] = &Karen::debug;
-    this->_log_functions[1] = &Karen::info;
-    this->_log_functions[2] = &Karen::warning;
-    this->_log_functions[3] = &Karen::error;
+    this->_log_functions[DEBUG_LEVEL] = &Karen::debug;
+    this->_log_functions[INFO_LEVEL] = &Karen::info;
+    this->_log_functions[WARNING_LEVEL] = &Karen::warning;
+    this->_log_functions[ERROR_LEVEL] = &Karen::error;
 }
 
 void    Karen::complain( std::string level )

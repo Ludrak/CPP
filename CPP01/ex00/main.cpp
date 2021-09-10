@@ -4,11 +4,8 @@
 int main()
 {
     randomChump("Michael");
-    randomChump("Dan");
-    randomChump("Ethan");
-    randomChump("Jacob");
 
-    Zombie *z = newZombie("Zag");
+    Zombie *z = newZombie("Bob");
     z->announce();
     delete z;
     return (0);

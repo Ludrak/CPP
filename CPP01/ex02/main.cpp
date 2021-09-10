@@ -8,12 +8,12 @@ int main()
     std::string *stringPTR = &string;
     std::string &stringREF = string;
 
-    // show address of str
+    /* show address of str */
     std::cout << "str_addr: " << &string << std::endl;
     std::cout << "ptr_addr: " << stringPTR << std::endl;
     std::cout << "ref_addr: " << &stringREF << std::endl;
 
-    // show str
+    /* show str */
     std::cout << "str:      \"" << string << "\"" << std::endl;
     std::cout << "ptr:      \"" << *stringPTR << "\"" << std::endl;
     std::cout << "ref:      \"" << stringREF << "\"" << std::endl;

@@ -51,11 +51,11 @@ int main(int ac, char **av)
         replace_stream << file_content;
         replace_stream.close();
         std::cout << "File replaced successfull. (output in " << file_name + ".replace" << ")" << std::endl;
+        return (EXIT_SUCCESS);
     }
+    else if (stream.is_open())
+        std::cerr << "Cannot open file: " << file_name << std::endl;
     else
-    {
-        std::cerr << "Cannot open file: " << (stream.is_open() ? file_name + ".replace" : file_name)  << std::endl;
-        return (EXIT_FAILURE);
-    }
-    return (EXIT_SUCCESS);
+        std::cerr << "Cannot create file: " << file_name + ".replace" << std::endl;
+    return (EXIT_FAILURE);
 }

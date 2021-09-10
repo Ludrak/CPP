@@ -30,10 +30,12 @@ class Karen
         void    complain( std::string level );
 
     private:
+        /* array to Karen's log functions */
+        void (Karen::*_log_functions[4])();
+
+        /* Karen log functions */
         void    debug( void );
         void    info( void );
         void    warning( void );
         void    error( void );
-
-        void (Karen::*_log_functions[4])();
 };
