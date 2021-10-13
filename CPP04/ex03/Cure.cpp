@@ -17,6 +17,16 @@ Cure::~Cure()
    std::cout << "Cure destructor called" << std::endl;
 }
 
+Cure        &Cure::operator=(const Cure &other)
+{
+   std::cout << "Cure assignation operator called" << std::endl;
+   if (this == &other)
+      return (*this);
+   this->_type = other.getType();
+   return (*this);
+}
+
+
 AMateria*   Cure::clone() const
 {
    return (new Cure(*this));

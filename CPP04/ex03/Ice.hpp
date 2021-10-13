@@ -9,6 +9,8 @@ class Ice : public virtual AMateria
         Ice(const Ice &copy);
         ~Ice();
 
+        Ice         &operator=(const Ice &other);
+
         AMateria*   clone() const;
         void        use(ICharacter& target);
 };

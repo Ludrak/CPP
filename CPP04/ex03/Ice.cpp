@@ -17,6 +17,14 @@ Ice::~Ice()
    std::cout << "Ice destructor called" << std::endl;
 }
 
+Ice         &Ice::operator=(const Ice &other)
+{
+   std::cout << "Ice assignation operator called" << std::endl;
+   if (this == &other)
+      return (*this);
+   this->_type = other.getType();
+   return (*this);
+}
 
 AMateria*   Ice::clone() const
 {

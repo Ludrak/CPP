@@ -10,8 +10,7 @@ MateriaSource::MateriaSource()
 MateriaSource::MateriaSource(const MateriaSource &copy)
 {
    std::cout << "MateriaSource copy constructor called" << std::endl;
-   for (int i = 0; i < 4; i++)
-      this->_learned_materia[i] = copy._learned_materia[i];
+   *this = copy;
 }
 
 MateriaSource::~MateriaSource()
@@ -19,6 +18,18 @@ MateriaSource::~MateriaSource()
    std::cout << "MateriaSource destructor called" << std::endl;
    for (int i = 0; i < 4; i++)
       delete this->_learned_materia[i];
+}
+
+MateriaSource     &MateriaSource::operator=(const MateriaSource &other)
+{
+   if (this == &other)
+      return (*this);
+   for (int i = 0; i < 4; i++) {
+      if (this->_learned_materia[i])
+         delete this->_learned_materia[i];
+      this->_learned_materia[i] = other._learned_materia[i]->clone();
+   }
+   return (*this);
 }
 
 void     MateriaSource::learnMateria(AMateria *materia)

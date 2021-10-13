@@ -13,6 +13,7 @@ int main()
 
         cat.getBrain()->addIdea("Destroying the world");
         dog.getBrain()->addIdea("Eat");
+        dog.getBrain()->addIdea("Bark");
         cat.makeSound();
         dog.makeSound();
         std::cout << std::endl << "\033[1;37mCOPYING ANIMALS\033[0m" << std::endl;
@@ -22,7 +23,7 @@ int main()
             std::cout << "Cat idea 0: " << c.getBrain()->getIdea(0) << std::endl; 
         }
         std::cout << std::endl << "\033[1;37mDESTROYING ANIMALS\033[0m" << std::endl;
-    }
+    } // <- end of scope, deleting stack objects in scope
 
 
     std::cout << std::endl << "\033[1;37mCREATING ANIMALS ARRAY\033[0m" << std::endl;
@@ -43,7 +44,6 @@ int main()
     {
         delete array[i];
     }
-    
 
     return (0);
 }

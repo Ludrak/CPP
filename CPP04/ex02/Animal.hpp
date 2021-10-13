@@ -14,10 +14,12 @@ class Animal
 
         virtual const std::string   getSound() const = 0;
     
-    public:
+    protected:
         Animal();
         Animal(const std::string &type);
         Animal(const Animal &c);
+
+    public:
         virtual ~Animal();
 
         virtual Animal  &operator=(const Animal &);

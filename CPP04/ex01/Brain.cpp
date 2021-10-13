@@ -10,8 +10,9 @@ Brain::Brain()
 Brain::Brain(const Brain &copy)
 {
    std::cout << "Copyied brain in " << this << std::endl;
-   for  (int i = 0; i < 100; i++)
-      this->ideas[i] = copy.getIdea(i);
+   *this = copy;
+   //for  (int i = 0; i < 100; i++)
+   //   this->ideas[i] = copy.getIdea(i);
 }
 
 Brain::~Brain()
@@ -21,6 +22,7 @@ Brain::~Brain()
 
 Brain   &Brain::operator=(const Brain &other)
 {
+   std::cout << "Brain "<< this << " assignation operator called" << std::endl;
    if (this == &other)
       return (*this);
    for (int i = 0; i < 100; i++)
