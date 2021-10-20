@@ -7,6 +7,8 @@ BIN=bin
 SRC_FILES=$(addprefix $(SRC_DIR),$(SRCS))
 OBJS=$(addprefix $(BIN)/, $(SRCS:.cpp=.o))
 
+HEADERS = Bureaucrat.hpp
+
 INCLUDES_LOCATION=inc
 LIBRARY_LOCATION=lib
 LIBRARYS=
@@ -27,7 +29,7 @@ $(BIN):
 	@echo "No bin dir found. Creating one."
 	@mkdir -p $(BIN)
 
-$(BIN)/%.o : $(SRC_DIR)/%.cpp
+$(BIN)/%.o : $(SRC_DIR)/%.cpp $(HEADERS)
 	@$(CLANG) -c $< -o $@ $(CPP_FLAGS) $(CPP_IFLAGS)
 	@echo "Compiled: $<"
 
